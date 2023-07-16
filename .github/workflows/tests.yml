@@ -2,6 +2,7 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, reopened, synchronize, ready_for_review]
 
 permissions:
   contents: read
@@ -12,13 +13,16 @@ name: tests
 jobs:
   tests:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+
+      - uses: snok/install-poetry@v1
 
       - uses: actions/setup-python@v4
         with:
           python-version: 3.11
-          cache: poetry
+          cache: 'poetry'
 
       - run: poetry install
 
