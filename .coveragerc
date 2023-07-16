@@ -1,0 +1,8 @@
+[run]
+source = cafe
+
+[report]
+omit =
+    */python?.?/*
+    */site-packages/*
+    cafe/__main__.py
