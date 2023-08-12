@@ -1,11 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from config import settings
-
-from features.upload.requestUploadService import upload_service_router
-
-# from features.parsing.interface.parsing import router as parsing_router
+from features.request_upload.requestUploadService import upload_service_router
 
 description = """
 Integrative Complexity Analysis of Texts
@@ -14,6 +10,7 @@ Integrative Complexity Analysis of Texts
 api = FastAPI(
     title="cafe",
     description=description,
+    version="0.1.0",
 )
 
 api.add_middleware(
