@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from features.request_upload.requestUploadService import upload_service_router
+from cafe.features.api.routes import api_router
 
 description = """
 Integrative Complexity Analysis of Texts
@@ -22,7 +22,7 @@ api.add_middleware(
 )
 
 
-api.include_router(upload_service_router)
+api.include_router(api_router)
 
 
 @api.on_event("startup")

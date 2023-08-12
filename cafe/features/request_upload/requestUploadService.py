@@ -1,4 +1,4 @@
-import common.upload_handler.uploadHandler as uploadHandler
+import cafe.common.upload_handler.uploadHandler as uploadHandler
 from fastapi import APIRouter, UploadFile
 
 upload_service_router = APIRouter()

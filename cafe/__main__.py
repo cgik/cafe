@@ -1,7 +1,5 @@
 import sys
-from cli import cli
-
-main = cli
+import main
 
 if __name__ == '__main__':
-    sys.exit(main())
+    sys.exit(main.run())
