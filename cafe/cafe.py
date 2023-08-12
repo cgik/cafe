@@ -3,6 +3,8 @@ from starlette.middleware.cors import CORSMiddleware
 
 from config import settings
 
+from features.upload.requestUploadService import upload_service_router
+
 # from features.parsing.interface.parsing import router as parsing_router
 
 description = """
@@ -12,7 +14,6 @@ Integrative Complexity Analysis of Texts
 api = FastAPI(
     title="cafe",
     description=description,
-    version=settings.poetry.version
 )
 
 api.add_middleware(
@@ -24,7 +25,8 @@ api.add_middleware(
 )
 
 
-# api.include_router(parsing_router)
+api.include_router(upload_service_router)
+
 
 @api.on_event("startup")
 def on_startup():

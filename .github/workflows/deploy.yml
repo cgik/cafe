@@ -12,10 +12,16 @@ jobs:
       steps:
         - uses: actions/checkout@v3
 
-        - uses: google-github-actions/auth@v1
+        - id: auth
+          uses: google-github-actions/auth@v1
           with:
-            workload_identity_provider: ${{ gcp_identity_provider }}
-            service_account: ${{ secrets.gcp_service_account }}
+            credentials_json: ${{ secrets.gcp_credentials_json }}
+
+        - uses: docker/login-action@v1
+          with:
+            registry: gcr.io
+            username: oauth2accesstoken
+            password: ${{ steps.auth.outputs.credentials }}
 
         - uses: snok/install-poetry@v1
 
@@ -28,7 +34,8 @@ jobs:
 
         - run: poetry run pytest
 
-        - run: docker build -t gcr.io/cafe/cafe .
+        - run: |-
+            echo '${{ steps.auth.outputs.access_token }}' | docker login -u oauth2accesstoken --password-stdin https://gcr.io
 
         - run: docker push gcr.io/cafe/cafe
 
@@ -45,8 +52,7 @@ jobs:
 
         - uses: google-github-actions/auth@v1
           with:
-            workload_identity_provider: ${{ gcp_identity_provider }}
-            service_account: ${{ secrets.gcp_service_account }}
+            credentials_json: ${{ secrets.gcp_credentials_json }}
 
         - uses: google-github-actions/deploy-cloudrun@v1
           with:
