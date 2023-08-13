@@ -5,10 +5,10 @@ upload_service_router = APIRouter()
 
 
 @upload_service_router.post("/upload/file")
-async def upload_file(file: UploadFile):
+async def upload_file(file: UploadFile) -> dict[str, str]:
     return await uploadHandler.upload_file(file)
 
 
 @upload_service_router.post("/upload/text")
-async def upload_text(text: str):
+async def upload_text(text: str) -> dict[str, str]:
     return await uploadHandler.upload_text(text)

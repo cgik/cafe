@@ -1,7 +1,7 @@
 import typer
 import uvicorn
 
-from config import settings
+from cafe.config import settings
 
 
 def run(
@@ -11,7 +11,7 @@ def run(
         reload: bool = settings.server.reload,
 ):
     uvicorn.run(
-        "api:api",
+        "cafe.api:api",
         host=host,
         port=port,
         log_level=log_level,
