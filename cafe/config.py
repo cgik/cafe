@@ -8,7 +8,7 @@ settings = Dynaconf(
     envvar_prefix="cafe",
     preload=[os.path.join(HERE, "default.toml")],
     settings_files=["default.toml", ".secrets.toml"],
-    environments=["development", "production"],
+    environments=["dev", "prod"],
     env_switcher="cafe_env",
     load_dotenv=False,
 )
