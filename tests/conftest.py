@@ -3,7 +3,7 @@ from cafe.api import api # noqa
 import pytest
 
 
-@pytest.fixture(scope="function", name="routes")
+@pytest.fixture(scope="function", name="api")
 def _api():
     return api
 
