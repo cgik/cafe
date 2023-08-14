@@ -1,4 +1,3 @@
-import typer
 import uvicorn
 
 from cafe.config import settings

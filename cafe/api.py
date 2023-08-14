@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from cafe.features.routes.routesHandler import api_router
-from cafe.common.data.mysql import SessionLocal
+# from cafe.common.data.mysql import SessionLocal
 
 description = """
 Integrative Complexity Analysis of Texts
@@ -28,10 +28,10 @@ api.include_router(api_router, prefix="/api")
 
 @api.on_event("startup")
 def on_startup() -> None:
-    db = SessionLocal()
+    # db = SessionLocal()
     pass
 
 
-@api.get("/healthz", tags=["health"])
+@api.get("/health", tags=["health"])
 def index() -> dict[str, str]:
     return {"message": "Hello World!"}
