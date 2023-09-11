@@ -16,6 +16,8 @@ httpx = "^0.24.1"
 python-multipart = "^0.0.6"
 sqlalchemy = "^2.0.20"
 pymysql = "^1.1.0"
+google-cloud-pubsub = "^2.18.3"
+google-auth = "^2.22.0"
 
 
 [tool.poetry.group.dev.dependencies]
