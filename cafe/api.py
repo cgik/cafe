@@ -26,7 +26,6 @@ api.add_middleware(
 api.include_router(api_router, prefix="/api")
 
 
-@api.on_event("startup")
 def on_startup() -> None:
     # db = SessionLocal()
     pass
