@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = "^0.104.0"
-uvicorn = "^0.23.2"
+uvicorn = "^0.25.0"
 typer = "^0.9.0"
 dynaconf = "^3.2.3"
 pytest = "^7.4.1"
