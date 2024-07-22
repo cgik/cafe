@@ -89,13 +89,13 @@ wmi = ["wmi (>=1.5.1)"]
 
 [[package]]
 name = "dynaconf"
-version = "3.2.5"
+version = "3.2.6"
 description = "The dynamic configurator for your Python Project"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "dynaconf-3.2.5-py2.py3-none-any.whl", hash = "sha256:12202fc26546851c05d4194c80bee00197e7c2febcb026e502b0863be9cbbdd8"},
-    {file = "dynaconf-3.2.5.tar.gz", hash = "sha256:42c8d936b32332c4b84e4d4df6dd1626b6ef59c5a94eb60c10cd3c59d6b882f2"},
+    {file = "dynaconf-3.2.6-py2.py3-none-any.whl", hash = "sha256:3911c740d717df4576ed55f616c7cbad6e06bc8ef23ffca444b6e2a12fb1c34c"},
+    {file = "dynaconf-3.2.6.tar.gz", hash = "sha256:74cc1897396380bb957730eb341cc0976ee9c38bbcb53d3307c50caed0aedfb8"},
 ]
 
 [package.extras]
@@ -1072,4 +1072,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "c43a93215c0cf4ba2bd9c6330e4f5bb00a821a8b520f2ca7e379948b9d41b7a8"
+content-hash = "cdff05552dbff4ae538c0bf31d23b85c7eb13fdb673368952b02cf9640b39df5"
