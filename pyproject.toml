@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = "^0.111.1"
+fastapi = "^0.112.0"
 uvicorn = "^0.30.3"
 typer = "^0.12.3"
 dynaconf = "^3.2.6"
